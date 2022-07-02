@@ -27,13 +27,12 @@ export const NewsDetailsStyles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: hp(15),
+    paddingHorizontal: hp(18),
     alignItems: 'center',
   },
   details: {
     fontWeight: '500',
     fontSize: hp(14),
-    marginBottom: hp(10),
   },
   container: {
     marginTop: hp(50),

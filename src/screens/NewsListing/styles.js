@@ -8,6 +8,7 @@ export const NewsListingStyles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     justifyContent: 'center',
+    width: wp(100.5),
   },
   edgescontainer: {
     flex: 1,
@@ -39,13 +40,12 @@ export const NewsListingStyles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: hp(15),
+    paddingHorizontal: hp(10),
     alignItems: 'center',
   },
   news: {
     fontWeight: '500',
     fontSize: hp(14),
-    marginBottom: hp(10),
   },
   container: {
     marginTop: hp(50),

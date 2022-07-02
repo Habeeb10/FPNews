@@ -5,22 +5,8 @@ import {SignInStyles as styles} from './styles';
 import {View, Text, TouchableOpacity, Alert} from 'react-native';
 import {Input} from '../../common/input';
 import {Button} from '../../common/button';
-import database from '@react-native-firebase/database';
-
-// const emailInfo = item => {
-//   database().ref('/items').push({
-//     user: item,
-//   });
-// };
-
-// const passwordInfo = item => {
-//   database().ref('/items').push({
-//     user: item,
-//   });
-// };
 
 const SignIn = ({navigation}) => {
-  // const [user] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

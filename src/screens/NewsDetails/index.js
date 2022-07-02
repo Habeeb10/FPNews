@@ -10,14 +10,15 @@ import {COLORS} from '../../constant';
 
 const {dispatch} = store;
 
-export default function NewsListing({navigation}) {
-  const {data, loading} = useSelector(state => state.fPNews);
+export default function NewsDetails({navigation}) {
+  const {title, loading} = useSelector(state => state.fPNews);
 
   useEffect(() => {
     dispatch.fPNews.loadData();
   }, []);
 
   const _renderItem = ({item}) => {
+    console.log(item);
     return <DetailsList summary={item.summary} author={item.author} />;
   };
 
@@ -39,7 +40,7 @@ export default function NewsListing({navigation}) {
           </View>
 
           <FlatList
-            data={data}
+            data={title}
             showsVerticalScrollIndicator={false}
             keyExtractor={(_, index) => index.toString()}
             renderItem={_renderItem}
