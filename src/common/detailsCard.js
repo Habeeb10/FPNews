@@ -8,8 +8,8 @@ export const DetailsList = ({summary, author}) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.author}> {summary}</Text>
-        <Text style={styles.author}>{author}</Text>
+        <Text style={styles.author}>Author:{author}</Text>
+        <Text style={styles.summary}>Summary:{summary}</Text>
       </View>
     </View>
   );
@@ -20,17 +20,24 @@ const styles = StyleSheet.create({
     height: hp(30),
     borderRadius: hp(30),
   },
+  summary: {
+    fontSize: hp(10),
+    color: COLORS.darkPurple,
+    marginTop: hp(10),
+  },
   author: {
     fontSize: hp(12),
     fontWeight: '400',
-    color: COLORS.linear,
+    color: COLORS.black,
   },
-
-  // container: {
-  //   borderRadius: hp(10),
-  //   marginBottom: hp(20),
-  //   borderWidth: 1,
-  //   borderColor: COLORS.magenta,
-  //   padding: hp(10),
-  // },
+  container: {
+    borderRadius: hp(10),
+    marginBottom: hp(20),
+    borderWidth: hp(0.5),
+    borderColor: COLORS.linear,
+    padding: hp(10),
+    width: '90%',
+    marginHorizontal: hp(20),
+    marginTop: hp(10),
+  },
 });
