@@ -5,12 +5,12 @@ const baseUrl =
 
 export const fPNews = {
   state: {
-    articles: [],
-    title: {},
+    title: [],
     topic: {},
     published_date: {},
-    summary: {},
+    summary: [],
     author: {},
+    media: {},
     loading: false,
   }, // initial state
   reducers: {
@@ -52,13 +52,12 @@ export const fPNews = {
       };
     },
 
-    // GET_IMAGES: (state, payload) => {
-    //   const data = payload.map(item => item.media);
-    //   return {
-    //     ...state,
-    //     media: [...data],
-    //   };
-    // },
+    FETCH_MEDIA: (state, payload) => {
+      return {
+        ...state,
+        media: payload,
+      };
+    },
   },
   effects: () => ({
     loadData() {
@@ -71,9 +70,10 @@ export const fPNews = {
             '9d37e5b69cmsh7bb8af13d291c11p1a9659jsndc49ea92a05f',
           'X-RapidAPI-Host': 'free-news.p.rapidapi.com',
         },
+        timeout: 3000,
       })
         .then(res => {
-          this.FETCH_TITLE(res.data);
+          this.FETCH_TITLE(res.data.articles);
           console.log(res.data);
           this.SETLOADING(false);
         })
@@ -86,7 +86,7 @@ export const fPNews = {
     topic() {
       this.SETLOADING(true);
       axios({
-        url: `${baseUrl}/topic`,
+        url: `${baseUrl}`,
         method: 'GET',
         headers: {
           'X-RapidAPI-Key':
@@ -94,14 +94,14 @@ export const fPNews = {
           'X-RapidAPI-Host': 'free-news.p.rapidapi.com',
         },
       }).then(res => {
-        this.FETCH_TOPIC(res.data);
+        this.FETCH_TOPIC(res.data.articles);
         this.SETLOADING(false);
       });
     },
     published_date() {
       this.SETLOADING(true);
       axios({
-        url: `${baseUrl}/published_date`,
+        url: `${baseUrl}`,
         method: 'GET',
         headers: {
           'X-RapidAPI-Key':
@@ -109,14 +109,14 @@ export const fPNews = {
           'X-RapidAPI-Host': 'free-news.p.rapidapi.com',
         },
       }).then(res => {
-        this.FETCH_DATE(res.data);
+        this.FETCH_DATE(res.data.articles);
         this.SETLOADING(false);
       });
     },
     summary() {
       this.SETLOADING(true);
       axios({
-        url: `${baseUrl}/summary`,
+        url: `${baseUrl}`,
         method: 'GET',
         headers: {
           'X-RapidAPI-Key':
@@ -124,14 +124,14 @@ export const fPNews = {
           'X-RapidAPI-Host': 'free-news.p.rapidapi.com',
         },
       }).then(res => {
-        this.FETCH_SUMMARY(res.data);
+        this.FETCH_SUMMARY(res.data.articles);
         this.SETLOADING(false);
       });
     },
     author() {
       this.SETLOADING(true);
       axios({
-        url: `${baseUrl}/author`,
+        url: `${baseUrl}`,
         method: 'GET',
         headers: {
           'X-RapidAPI-Key':
@@ -139,7 +139,22 @@ export const fPNews = {
           'X-RapidAPI-Host': 'free-news.p.rapidapi.com',
         },
       }).then(res => {
-        this.FETCH_AUTHOR(res.data);
+        this.FETCH_AUTHOR(res.data.articles);
+        this.SETLOADING(false);
+      });
+    },
+    media() {
+      this.SETLOADING(true);
+      axios({
+        url: `${baseUrl}`,
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key':
+            '9d37e5b69cmsh7bb8af13d291c11p1a9659jsndc49ea92a05f',
+          'X-RapidAPI-Host': 'free-news.p.rapidapi.com',
+        },
+      }).then(res => {
+        this.FETCH_MEDIA(res.data.articles);
         this.SETLOADING(false);
       });
     },
