@@ -12,10 +12,9 @@ export default function Navigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode={'none'}>
-        <Stack.Screen name="listing" component={NewsListing} />
         <Stack.Screen name="signup" component={SignUp} />
         <Stack.Screen name="signin" component={SignIn} />
-
+        <Stack.Screen name="listing" component={NewsListing} />
         <Stack.Screen name="details" component={NewsDetails} />
       </Stack.Navigator>
     </NavigationContainer>
