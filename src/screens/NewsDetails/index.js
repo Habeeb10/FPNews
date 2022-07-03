@@ -3,10 +3,11 @@ import {ActivityIndicator, FlatList, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {NewsDetailsStyles as styles} from './styles';
 import {store} from '../../store';
-import {Text} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {DetailsList} from '../../common/detailsCard';
 import {Button} from '../../common/button';
 import {COLORS} from '../../constant';
+import {BackArrow} from '../../../assets/svg';
 
 const {dispatch} = store;
 
@@ -31,7 +32,10 @@ export default function NewsDetails({navigation}) {
       <View style={styles.container}>
         <View>
           <View style={styles.header}>
-            <Text style={styles.details}>News Details</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('listing')}>
+              <BackArrow />
+            </TouchableOpacity>
+
             <Button
               title="SignOut"
               onPress={() => navigation.navigate('signup')}

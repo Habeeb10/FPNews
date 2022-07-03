@@ -1,15 +1,14 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {hp, wp} from '../constant/utils';
-import {Button} from './button';
 import {COLORS} from '../constant';
 
 export const DetailsList = ({summary, author}) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.author}>Author:{author}</Text>
-        <Text style={styles.summary}>Summary:{summary}</Text>
+        <Text style={styles.author}>Author : {author}</Text>
+        <Text style={styles.summary}>Summary : {summary}</Text>
       </View>
     </View>
   );
@@ -24,6 +23,7 @@ const styles = StyleSheet.create({
     fontSize: hp(10),
     color: COLORS.darkPurple,
     marginTop: hp(10),
+    fontWeight: '400',
   },
   author: {
     fontSize: hp(12),
