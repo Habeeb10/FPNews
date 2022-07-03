@@ -1,3 +1,4 @@
+$RNFirebaseAsStaticFramework = true
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
@@ -19,6 +20,8 @@ target 'FPNews' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  use_frameworks!
+  
   target 'FPNewsTests' do
     inherit! :complete
     # Pods for testing
