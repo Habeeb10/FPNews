@@ -1,16 +1,12 @@
-$RNFirebaseAsStaticFramework = true
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
-
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'FPNews' do
   config = use_native_modules!
-
   # Flags change depending on the env values.
   flags = get_default_flags()
-
   use_react_native!(
     :path => config[:reactNativePath],
     # to enable hermes on iOS, change `false` to `true` and then install pods
@@ -18,11 +14,10 @@ target 'FPNews' do
     :fabric_enabled => flags[:fabric_enabled],
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
+    
   )
-
-  use_frameworks!
-  
   target 'FPNewsTests' do
+   
     inherit! :complete
     # Pods for testing
   end

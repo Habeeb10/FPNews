@@ -1,6 +1,4 @@
-#import <Firebase.h>
 #import "AppDelegate.h"
-
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -29,12 +27,6 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 #endif
 
 @implementation AppDelegate
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Add me --- \/
-  [FIRApp configure];
-  // Add me --- /\
-  // ...
-}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   RCTAppSetupPrepareApp(application);
