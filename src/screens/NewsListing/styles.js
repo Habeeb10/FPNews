@@ -17,11 +17,7 @@ export const NewsListingStyles = StyleSheet.create({
   edgescontainer: {
     flex: 1,
   },
-  // button: {
-  //   width: wp(100),
-  //   height: hp(35),
-  //   alignSelf: 'center',
-  // },
+
   loading: {
     flex: 1,
     alignItems: 'center',
