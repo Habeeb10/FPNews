@@ -3,11 +3,15 @@ import {hp, wp} from '../../constant/utils';
 import {COLORS} from '../../constant';
 
 export const NewsListingStyles = StyleSheet.create({
+  errorButton: {
+    backgroundColor: COLORS.linear,
+    width: wp(70.5),
+    marginLeft: hp(15),
+    alignSelf: 'center',
+    height: hp(31),
+  },
   button: {
     backgroundColor: COLORS.linear,
-    alignItems: 'center',
-    alignSelf: 'center',
-    justifyContent: 'center',
     width: wp(100.5),
   },
   edgescontainer: {
@@ -42,6 +46,7 @@ export const NewsListingStyles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: hp(10),
     alignItems: 'center',
+    marginTop: hp(20),
   },
   news: {
     fontWeight: '500',

@@ -5,9 +5,6 @@ import {COLORS} from '../../constant';
 export const NewsDetailsStyles = StyleSheet.create({
   button: {
     backgroundColor: COLORS.linear,
-    alignItems: 'center',
-    alignSelf: 'center',
-    justifyContent: 'center',
   },
   loading: {
     flex: 1,
@@ -29,6 +26,7 @@ export const NewsDetailsStyles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: hp(18),
     alignItems: 'center',
+    marginTop: hp(15),
   },
   details: {
     fontWeight: '500',

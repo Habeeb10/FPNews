@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {ActivityIndicator, FlatList, View} from 'react-native';
+import {ActivityIndicator, FlatList, View, Alert} from 'react-native';
 import {useSelector} from 'react-redux';
 import {NewsListingStyles as styles} from './styles';
 import {store} from '../../store';
@@ -10,6 +10,13 @@ import {COLORS} from '../../constant';
 import {Container} from '../../common/container';
 
 const {dispatch} = store;
+const handError = () => {
+  if ('details') {
+    return Alert.alert('runtime error!');
+  } else {
+    null;
+  }
+};
 
 export default function NewsListing({navigation}) {
   const {title, loading} = useSelector(state => state.fPNews);
@@ -39,7 +46,11 @@ export default function NewsListing({navigation}) {
       <Container>
         <View>
           <View style={styles.header}>
-            <Text style={styles.news}>All News</Text>
+            <Button
+              title="Error"
+              onPress={handError}
+              Style={styles.errorButton}
+            />
             <Button
               title="Show Details"
               onPress={() => navigation.navigate('details')}
